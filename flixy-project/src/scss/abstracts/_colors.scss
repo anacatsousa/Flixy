@@ -1,0 +1,16 @@
+$white: #ffffff;
+$black: #141414;
+$red: #c1121f;
+$ligth-gray: #dadada;
+$dark-gray: #8a8989;
+
+body {
+	background-color: $black;
+}
+
+a {
+	color: $white;
+	&:hover {
+		color: $ligth-gray;
+	}
+}

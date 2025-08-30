@@ -1,0 +1,16 @@
+@use '../../scss/abstracts/index' as *;
+
+.simple-navbar {
+	@include flex(row, nowrap, flex-start, center);
+	padding: 0 50px;
+	height: 73.5px;
+	background-color: $red;
+
+	@include mobile {
+		padding: 0 30px;
+	}
+
+	&__logo {
+		width: clamp(70px, 8vw, 90px);
+	}
+}

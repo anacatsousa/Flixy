@@ -1,0 +1,67 @@
+@use '../../scss/abstracts/index' as *;
+@use '../../scss/base/index' as *;
+
+.tabs {
+	&__header {
+		border-bottom: 1px solid $dark-gray;
+	}
+	&__title {
+		background-color: transparent;
+		color: $white;
+		border: 0;
+		margin-right: 20px;
+		font-size: $h3;
+		cursor: pointer;
+
+		&:hover {
+			color: $ligth-gray;
+		}
+
+		&--active {
+			border-bottom: 1px solid $red;
+			padding-bottom: 20px;
+			position: relative;
+			z-index: 1;
+			margin-bottom: -1px;
+		}
+	}
+
+	&__content {
+		margin-top: 30px;
+	}
+
+	&__details {
+		&-cast {
+			margin-bottom: 50px;
+		}
+
+		&-title {
+			font-size: $h3;
+			margin-bottom: 30px;
+		}
+	}
+	&__cast {
+		@include grid();
+		&-info {
+			@include flex(row, nowrap, flex-start, center);
+			gap: 20px;
+			@extend %card-details;
+			&-img {
+				width: 100px;
+			}
+			p:last-of-type {
+				@extend %last-text-gray;
+			}
+		}
+	}
+	&__crew {
+		@include grid();
+		&-info {
+			@extend %card-details;
+			padding: 20px 0;
+			p:last-of-type {
+				@extend %last-text-gray;
+			}
+		}
+	}
+}

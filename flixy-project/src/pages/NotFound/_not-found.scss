@@ -1,0 +1,14 @@
+@use '../../scss/abstracts/index' as *;
+@use '../../scss/base/index' as *;
+
+.not-found {
+	@include flex(column, nowrap, center, center);
+	height: calc(100vh - 73.5px);
+	gap: 20px;
+	h1 {
+		font-size: $h1;
+		color: $red;
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+}

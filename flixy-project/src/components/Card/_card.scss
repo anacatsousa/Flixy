@@ -1,0 +1,48 @@
+@use '../../scss/abstracts/index' as *;
+@use '../../scss/base/index' as *;
+
+.card {
+	@include flex(column, nowrap, flex-start, flex-start);
+	border: 1.5px solid transparent;
+	gap: 15px;
+
+	&:hover {
+		border: 1.5px solid $white;
+	}
+
+	&--flex {
+		// width: 193.14px;
+		width: 100%;
+	}
+
+	&--grid {
+		max-width: 100%;
+		margin-bottom: 10px;
+	}
+
+	&__wrapper {
+		@include flex(column, nowrap, space-between, flex-start);
+		gap: 20px;
+	}
+	&__img {
+		width: 100%;
+	}
+	&__title {
+		font-weight: 600;
+		padding-left: 8px;
+	}
+	&__section {
+		@include flex(row, nowrap, flex-start, center);
+		gap: 5px;
+		color: $dark-gray;
+		padding-bottom: 8px;
+		padding-left: 8px;
+	}
+	&__year,
+	&__stars {
+		font-size: $small;
+	}
+	&__star {
+		max-width: 0.8rem;
+	}
+}

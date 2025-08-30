@@ -1,0 +1,17 @@
+@use '../../scss/abstracts/index' as *;
+@use '../../scss/base/index' as *;
+
+.success {
+	@include flex(column, nowrap, center, center);
+	height: calc(100vh - 73.5px - 111.91px);
+	gap: 20px;
+	h2 {
+		font-size: $h2;
+		color: $red;
+		font-weight: 600;
+	}
+
+	@include tablet {
+		height: 100dvh;
+	}
+}

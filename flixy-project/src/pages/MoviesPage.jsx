@@ -1,0 +1,18 @@
+import Container from '../components/Container/Container';
+import MoviesList from '../components/MoviesList';
+import SearchResults from '../components/SearchResults';
+
+import GenresResults from '../components/GenresResults';
+import { useAllGenresContext } from '../context/useGenresContext';
+import { useSearchContext } from '../context/useSearchContext';
+
+function Movies() {
+	const { query } = useSearchContext();
+	const { selectedGenres } = useAllGenresContext();
+
+	const hasSelectedGenres = selectedGenres && selectedGenres.length > 0;
+
+	return <Container>{query.length > 0 ? <SearchResults /> : hasSelectedGenres ? <GenresResults type="movie" /> : <MoviesList />}</Container>;
+}
+
+export default Movies;

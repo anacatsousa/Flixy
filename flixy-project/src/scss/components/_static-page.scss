@@ -1,0 +1,73 @@
+@use '../abstracts/index' as *;
+@use '../base/index' as *;
+
+.static-page {
+	&:first-child {
+		padding-top: 73.5px;
+	}
+
+	&__title {
+		font-size: $h2;
+		font-weight: 600;
+		margin-bottom: 35px;
+	}
+
+	&__subtitle {
+		font-weight: 600;
+		font-size: $h3;
+		margin: 35px 0 20px 0;
+	}
+	p {
+		line-height: 1.6;
+	}
+
+	&__form-group {
+		@include flex(column, nowrap, flex-start, flex-start);
+		margin-bottom: 40px;
+	}
+	&__label {
+		height: 20px;
+		margin-bottom: 20px;
+		font-weight: 600;
+		&:after {
+			content: '*';
+			color: $red;
+			margin-left: 2px;
+		}
+	}
+	&__input {
+		@extend %input;
+	}
+	&__textarea {
+		@extend %input;
+		border: 1px solid $ligth-gray;
+		padding: 10px;
+	}
+	&__input::placeholder,
+	&__textarea::placeholder {
+		color: $dark-gray;
+		font-size: 0.95rem;
+		font-style: italic;
+		letter-spacing: 0.5px;
+	}
+
+	&__input:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 50px $black inset;
+		-webkit-text-fill-color: $white !important;
+		font-size: inherit;
+	}
+
+	&__error-message {
+		color: $red;
+		font-size: 0.85rem;
+		margin-top: 5px;
+		display: none;
+	}
+	.invalid {
+		display: block;
+	}
+
+	&__btn {
+		@extend %btn;
+	}
+}

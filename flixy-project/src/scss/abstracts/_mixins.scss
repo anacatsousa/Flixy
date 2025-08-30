@@ -1,0 +1,39 @@
+@use './colors' as *;
+
+@mixin flex($direction, $wrap, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin grid($gap: 20px, $width: 250px) {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+	gap: $gap;
+}
+
+@mixin tablet {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: 576px) {
+		@content;
+	}
+}
+
+@mixin tablet-container {
+	@container (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin mobile-container {
+	@container (max-width: 576px) {
+		@content;
+	}
+}

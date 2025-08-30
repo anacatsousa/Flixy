@@ -1,0 +1,16 @@
+@use '../abstracts/index' as *;
+@use '../base/index' as *;
+
+.loading {
+	@include flex(column, nowrap, center, center);
+	height: 100vh;
+	font-size: $h3;
+	color: $red;
+	font-weight: 600;
+}
+
+.loading-section {
+	font-size: $h3;
+	color: $red;
+	font-weight: 600;
+}

@@ -1,0 +1,10 @@
+@use '../../scss/abstracts/index' as *;
+
+// Container global
+.container {
+	padding: 30px 50px;
+
+	@include mobile {
+		padding: 30px;
+	}
+}

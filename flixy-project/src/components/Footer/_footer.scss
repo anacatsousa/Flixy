@@ -1,0 +1,31 @@
+@use '../../scss/abstracts/index' as *;
+
+.footer {
+	padding-top: 30px;
+	border-top: 1px solid $ligth-gray;
+	text-align: center;
+	@include flex(row, nowrap, space-between, center);
+
+	//tablet
+
+	@include tablet {
+		@include flex(column, nowrap, space-between, center);
+		gap: 40px;
+	}
+
+	&__logo {
+		width: clamp(70px, 8vw, 90px);
+	}
+
+	&__info {
+		@include flex(row, wrap, center, center);
+		gap: 20px;
+
+		// mobile
+
+		@include mobile {
+			@include flex(column, nowrap, center, center);
+			gap: 25px;
+		}
+	}
+}

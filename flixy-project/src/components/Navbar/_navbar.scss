@@ -1,0 +1,133 @@
+@use '../../scss/abstracts/index' as *;
+
+.nav {
+	@include flex(row, nowrap, space-between, center);
+	padding: 0 50px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: background-color 0.2s ease-in-out;
+	height: 73.5px;
+	z-index: 100;
+
+	//mobile
+
+	@include mobile {
+		padding: 0 30px;
+	}
+
+	&--scrolled {
+		background-color: $black;
+	}
+
+	&__left {
+		@include flex(row, nowrap, space-between, center);
+		a {
+			margin-right: 30px;
+		}
+	}
+
+	&__logo {
+		width: clamp(70px, 8vw, 90px);
+	}
+
+	&__hamburguer {
+		@extend %icons;
+	}
+
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.4); /* escurece o fundo */
+		z-index: 999;
+		pointer-events: all;
+	}
+
+	&__menu {
+		@include flex(column, nowrap, flex-start, flex-start);
+		gap: 20px;
+		height: 100dvh;
+		width: 50dvw;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $red;
+		padding: 25px 30px 30px 30px;
+		&-links {
+			@include flex(row, nowrap, space-between, flex-start);
+			width: 100%;
+			gap: 20px;
+			a:first-child {
+				margin-bottom: 20px;
+			}
+			a {
+				color: $white;
+			}
+		}
+		&__icons {
+			@extend %icons;
+		}
+	}
+
+	&__menu--open {
+		z-index: 1000;
+	}
+
+	&__right {
+		@include flex(row, nowrap, flex-end, center);
+
+		a {
+			margin-left: 22px;
+		}
+	}
+
+	&__search {
+		@include flex(row, nowrap, flex-end, center);
+		margin-left: 30px;
+		&--open {
+			border: 1px solid $white;
+			background-color: $black;
+		}
+	}
+
+	&__input {
+		border: 0;
+		background-color: $black;
+		color: $white;
+		padding: 8px 12px;
+		width: 280px;
+		@include mobile {
+			max-width: 200px;
+			width: 100%;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__input::placeholder {
+		color: $dark-gray;
+		font-style: italic;
+		letter-spacing: 0.5px;
+	}
+
+	&__input:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 50px $black inset;
+		-webkit-text-fill-color: $white !important;
+	}
+
+	&__button {
+		background-color: transparent;
+		border: 0;
+		cursor: pointer;
+		right: 8px;
+	}
+
+	&__icons {
+		@extend %icons;
+		cursor: pointer;
+	}
+}

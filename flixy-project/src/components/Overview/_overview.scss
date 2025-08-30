@@ -1,0 +1,15 @@
+@use '../../scss/base/index' as *;
+@use '../../scss/abstracts/index' as *;
+
+.overview {
+	padding: 25px 0 50px 0;
+	font-size: $text;
+	line-height: 1.2;
+	width: 80%;
+
+	// mobile
+
+	@include mobile {
+		width: 100%;
+	}
+}
