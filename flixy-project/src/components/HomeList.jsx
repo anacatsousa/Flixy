@@ -78,13 +78,13 @@ function HomeList() {
 
 	return (
 		<>
-			<div className="wrapper">
-				<h2 className="wrapper__title">My List</h2>
-				<div className="wrapper__posters">
-					{myList.length === 0 ? (
-						<p> Your list is empy</p>
-					) : (
-						myList.map((list) => (
+			{myList.length === 0 ? (
+				''
+			) : (
+				<div className="wrapper">
+					<h2 className="wrapper__title">My List</h2>
+					<div className="wrapper__posters">
+						{myList.map((list) => (
 							<Link to={`/${list.media_type}/${list.id}`} key={list.id}>
 								<Card
 									img={`https://image.tmdb.org/t/p/w500${list.poster_path}`}
@@ -94,10 +94,10 @@ function HomeList() {
 									layout="flex"
 								/>
 							</Link>
-						))
-					)}
+						))}
+					</div>
 				</div>
-			</div>
+			)}
 
 			<div className="wrapper">
 				<h2 className="wrapper__title">Popular Movies</h2>
