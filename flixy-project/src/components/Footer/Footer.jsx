@@ -14,7 +14,7 @@ function Footer() {
 						<ScrollToTop />
 						<Link to={'/about'}>About Us</Link>
 						<Link to={'/contact'}>Contact Us</Link>
-						<Link to={'/privacy'}>Privacy policy</Link>
+						<Link to={'/privacy'}>Privacy Policy</Link>
 						<Link to={'/terms'}>Terms of Use</Link>
 					</div>
 					<p> &copy; {new Date().getFullYear()} Flixy</p>
