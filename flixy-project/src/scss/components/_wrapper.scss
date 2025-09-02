@@ -53,12 +53,15 @@
 }
 @media (max-width: 576px) {
 	.wrapper__posters > * {
-		width: clamp(120px, calc((100vw - 2 * 35px) / 2), 253px);
+		width: clamp(120px, calc((100vw - 2 * 30px) / 3), 176px);
 	}
 }
 
 @media (max-width: 415px) {
 	.wrapper__posters > * {
-		width: 100%;
+		width: clamp(120px, calc((100vw - 2 * 25px) / 2), 330px);
 	}
+	// .wrapper__posters > * {
+	// 	width: 100%;
+	// }
 }

@@ -13,7 +13,7 @@
 	//mobile
 
 	@include mobile {
-		padding: 0 30px;
+		padding: 0 20px;
 	}
 
 	&--scrolled {
@@ -24,6 +24,10 @@
 		@include flex(row, nowrap, space-between, center);
 		a {
 			margin-right: 30px;
+
+			@include mobile {
+				margin-right: 25px;
+			}
 		}
 	}
 
@@ -33,6 +37,7 @@
 
 	&__hamburguer {
 		@extend %icons;
+		cursor: pointer;
 	}
 
 	.overlay {
@@ -55,7 +60,11 @@
 		top: 0;
 		left: 0;
 		background-color: $red;
-		padding: 25px 30px 30px 30px;
+		padding: 27px 50px 30px 50px;
+		@include mobile {
+			padding: 27px 20px 20px 20px;
+		}
+
 		&-links {
 			@include flex(row, nowrap, space-between, flex-start);
 			width: 100%;
@@ -80,7 +89,11 @@
 		@include flex(row, nowrap, flex-end, center);
 
 		a {
-			margin-left: 22px;
+			margin-left: 30px;
+
+			@include mobile {
+				margin-left: 25px;
+			}
 		}
 	}
 
