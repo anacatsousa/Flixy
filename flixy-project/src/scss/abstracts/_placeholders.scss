@@ -7,10 +7,12 @@
 	padding: 10px 25px;
 	background-color: $white;
 	color: $red;
+	font-size: 1rem;
 	font-weight: 600;
 	border-radius: 4px;
 	text-align: center;
 	border: 0;
+	cursor: pointer;
 	&:hover {
 		background-color: $red;
 		color: $white;
