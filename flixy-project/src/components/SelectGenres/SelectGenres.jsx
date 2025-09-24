@@ -1,19 +1,16 @@
 import Select from 'react-select';
 import useAllGenres from '../../hooks/Geners';
 import './_selectGenres.scss';
-import { useMemo } from 'react';
 import { useAllGenresContext } from '../../context/useGenresContext';
 
 function SelectGenres({ type }) {
 	const { allGenres, isLoading } = useAllGenres(type);
 	const { selectedGenres, setSelectedGenres } = useAllGenresContext();
 
-	const genreOptions = useMemo(() => {
-		return allGenres.map((genre) => ({
-			value: genre.id,
-			label: genre.name,
-		}));
-	}, [allGenres]);
+	const genreOptions = allGenres.map((genre) => ({
+		value: genre.id,
+		label: genre.name,
+	}));
 
 	const handleChange = (selectedOptions) => {
 		setSelectedGenres(selectedOptions);
