@@ -2,4 +2,23 @@
 
 .btn {
 	@extend %btn;
+
+	&--my-list {
+		@include flex(row, nowrap, center, center);
+		padding: 0;
+		width: 100px;
+		gap: 5px;
+		background-color: transparent;
+		color: $white;
+		&:hover {
+			background-color: transparent;
+		}
+		img {
+			width: 35px;
+
+			@include mobile {
+				width: 30px;
+			}
+		}
+	}
 }

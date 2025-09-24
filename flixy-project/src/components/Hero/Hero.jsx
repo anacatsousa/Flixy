@@ -1,5 +1,4 @@
 import Button from '../Button/Button';
-import ButtonMyList from '../ButtonMyList/ButtonMyList';
 import star from '../../assets/star-white.svg';
 import './_hero.scss';
 
@@ -28,7 +27,7 @@ function Hero({ details, logo }) {
 			<div className="hero_genres">{details.genres.map((genre) => genre.name).join(' | ')}</div>
 			<div className="hero__action">
 				<Button text="Watch Now" />
-				<ButtonMyList item={details} type={type} />
+				<Button text="My List" myList={true} item={details} type={type} variant="my-list" />
 			</div>
 		</div>
 	);
