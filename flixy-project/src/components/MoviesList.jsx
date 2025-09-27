@@ -5,44 +5,47 @@ import Card from './Card/Card';
 import '../scss/components/_wrapper.scss';
 import '../scss/pages/_loading.scss';
 import SelectGenres from './SelectGenres/SelectGenres';
+import usePopularMovies from '../hooks/PopularMovies';
 
 function MoviesList() {
 	const [isLoading, setIsLoading] = useState(false);
-	const [popularMovies, setPopularMovies] = useState([]);
+	//const [popularMovies, setPopularMovies] = useState([]);
 	const [nowPlaying, setNowPlaying] = useState([]);
 	const [topRated, setTopRated] = useState([]);
 	const [upcoming, setUpcoming] = useState([]);
 
 	// Popular Movies
 
-	useEffect(() => {
-		const fetchPopularMovies = async () => {
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjU4M2ZhNDIwOTlmNTgwOTFhMzg5YmEzYzA1NjIwZiIsIm5iZiI6MTc1NDA4MjI1My41MDEsInN1YiI6IjY4OGQyYmNkMGQwNmQ2ZmMzYTExY2ZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aaG6bNSR5S46iZYs5gJAKG1RahRTnrOy22d3mH6y9OU', // Replace with your Bearer token
-				},
-			};
+	const { popularMovies, isLoading: moviesLoading } = usePopularMovies();
 
-			setIsLoading(true);
+	// useEffect(() => {
+	// 	const fetchPopularMovies = async () => {
+	// 		const options = {
+	// 			method: 'GET',
+	// 			headers: {
+	// 				accept: 'application/json',
+	// 				Authorization:
+	// 					'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjU4M2ZhNDIwOTlmNTgwOTFhMzg5YmEzYzA1NjIwZiIsIm5iZiI6MTc1NDA4MjI1My41MDEsInN1YiI6IjY4OGQyYmNkMGQwNmQ2ZmMzYTExY2ZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aaG6bNSR5S46iZYs5gJAKG1RahRTnrOy22d3mH6y9OU', // Replace with your Bearer token
+	// 			},
+	// 		};
 
-			try {
-				const data = await fetch(`https://api.themoviedb.org/3/movie/popular`, options);
-				const newPopularMovies = await data.json();
+	// 		setIsLoading(true);
 
-				console.log('newPopularMovies', newPopularMovies);
+	// 		try {
+	// 			const data = await fetch(`https://api.themoviedb.org/3/movie/popular`, options);
+	// 			const newPopularMovies = await data.json();
 
-				setPopularMovies(newPopularMovies.results);
-			} catch (error) {
-				console.log('error', error);
-			} finally {
-				setIsLoading(false);
-			}
-		};
-		fetchPopularMovies();
-	}, []);
+	// 			console.log('newPopularMovies', newPopularMovies);
+
+	// 			setPopularMovies(newPopularMovies.results);
+	// 		} catch (error) {
+	// 			console.log('error', error);
+	// 		} finally {
+	// 			setIsLoading(false);
+	// 		}
+	// 	};
+	// 	fetchPopularMovies();
+	// }, []);
 
 	// Now Playing
 
@@ -134,7 +137,7 @@ function MoviesList() {
 		fetchAiringToday();
 	}, []);
 
-	if (isLoading === true) return <span className="loading">LOADING ....</span>;
+	if (isLoading || moviesLoading === true) return <span className="loading">LOADING ....</span>;
 
 	return (
 		<>

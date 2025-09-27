@@ -7,7 +7,6 @@ import Card from '../Card/Card';
 import { Link } from 'react-router';
 import './_tabs.scss';
 import '../../scss/pages/_loading.scss';
-import ScrollToTop from '../ScrollToTop';
 
 function Tabs({ credits, type, genresId, id }) {
 	const [isActive, setIsActive] = useState('similar');
