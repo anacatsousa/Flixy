@@ -1,80 +1,17 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { Link } from 'react-router';
 import Card from './Card/Card';
 import useMyList from '../hooks/MyList';
 import '../scss/components/_wrapper.scss';
 import '../scss/pages/_loading.scss';
+import usePopularMovies from '../hooks/PopularMovies';
+import usePopularSeries from '../hooks/PopularSeries';
 
 function HomeList() {
-	const [isLoading, setIsLoading] = useState(false);
-	const [popularMovies, setPopularMovies] = useState([]);
-	const [popularSeries, setPopularSeries] = useState([]);
 	const { myList } = useMyList();
+	const { popularMovies, isLoading: moviesLoading } = usePopularMovies();
+	const { popularSeries, isLoading: seriesloading } = usePopularSeries();
 
-	// Popular Movies
-
-	useEffect(() => {
-		const fetchPopularMovies = async () => {
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjU4M2ZhNDIwOTlmNTgwOTFhMzg5YmEzYzA1NjIwZiIsIm5iZiI6MTc1NDA4MjI1My41MDEsInN1YiI6IjY4OGQyYmNkMGQwNmQ2ZmMzYTExY2ZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aaG6bNSR5S46iZYs5gJAKG1RahRTnrOy22d3mH6y9OU', // Replace with your Bearer token
-				},
-			};
-
-			setIsLoading(true);
-
-			try {
-				const data = await fetch(`https://api.themoviedb.org/3/movie/popular`, options);
-				const newPopularMovies = await data.json();
-
-				console.log('newPopularMovies', newPopularMovies);
-
-				setPopularMovies(newPopularMovies.results);
-			} catch (error) {
-				console.log('error', error);
-			} finally {
-				setIsLoading(false);
-			}
-		};
-		fetchPopularMovies();
-	}, []);
-
-	// Popular Series
-
-	useEffect(() => {
-		const fetchPopularSeries = async () => {
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjU4M2ZhNDIwOTlmNTgwOTFhMzg5YmEzYzA1NjIwZiIsIm5iZiI6MTc1NDA4MjI1My41MDEsInN1YiI6IjY4OGQyYmNkMGQwNmQ2ZmMzYTExY2ZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aaG6bNSR5S46iZYs5gJAKG1RahRTnrOy22d3mH6y9OU', // Replace with your Bearer token
-				},
-			};
-
-			setIsLoading(true);
-
-			try {
-				const data = await fetch(`https://api.themoviedb.org/3/tv/popular`, options);
-				const newPopularSeries = await data.json();
-
-				console.log('newPopularSeries', newPopularSeries);
-
-				setPopularSeries(newPopularSeries.results);
-			} catch (error) {
-				console.log('error', error);
-			} finally {
-				setIsLoading(false);
-			}
-		};
-		fetchPopularSeries();
-	}, []);
-
-	if (isLoading === true) return <span className="loading">LOADING ....</span>;
+	if (moviesLoading || seriesloading === true) return <span className="loading">LOADING ...</span>;
 
 	return (
 		<>

@@ -40,7 +40,7 @@ function useCredits(type) {
 		fetchCredits();
 	}, [id, type]);
 
-	if (isLoading === true) return <span>LOADING...</span>;
+	if (isLoading === true) return <span className="loading">LOADING...</span>;
 
 	return { credits, type };
 }

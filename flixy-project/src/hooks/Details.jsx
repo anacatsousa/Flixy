@@ -42,7 +42,7 @@ function useDetails(type) {
 		fetchDetails();
 	}, [id, type]);
 
-	if (isLoading === true) return <span>LOADING...</span>;
+	if (isLoading === true) return <span className="loading">LOADING...</span>;
 
 	return { details, isLoading };
 }
