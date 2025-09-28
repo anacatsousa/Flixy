@@ -2,8 +2,8 @@ import Container from '../components/Container/Container';
 import GenresResults from '../components/GenresResults';
 import SearchResults from '../components/SearchResults';
 import SeriesList from '../components/TvShowsList';
-import { useAllGenresContext } from '../context/useGenresContext';
-import { useSearchContext } from '../context/useSearchContext';
+import { useAllGenresContext } from '../hooks/useGenresContext';
+import { useSearchContext } from '../hooks/useSearchContext';
 
 function Series() {
 	const { query } = useSearchContext();

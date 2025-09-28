@@ -6,8 +6,8 @@ import Overview from '../components/Overview/Overview';
 import useCredits from '../hooks/Credits';
 import Tabs from '../components/Tabs/Tabs';
 import SearchResults from '../components/SearchResults';
-import { useSearchContext } from '../context/useSearchContext';
 import '../scss/pages/_loading.scss';
+import { useSearchContext } from '../hooks/useSearchContext';
 
 function Serie() {
 	const { details, isLoading: loadingDetails } = useDetails('tv');

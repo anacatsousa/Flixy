@@ -6,7 +6,7 @@ import Overview from '../components/Overview/Overview';
 import Tabs from '../components/Tabs/Tabs';
 import useCredits from '../hooks/Credits';
 import SearchResults from '../components/SearchResults';
-import { useSearchContext } from '../context/useSearchContext';
+import { useSearchContext } from '../hooks/useSearchContext';
 import '../scss/pages/_loading.scss';
 
 function Movie() {

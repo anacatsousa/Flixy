@@ -10,9 +10,8 @@ import user from '../../assets/user-white.svg';
 import userGray from '../../assets/user-gray.svg';
 import hamburguer from '../../assets/bars-white.svg';
 import hamburguerGray from '../../assets/bars-gray.svg';
-
 import './_navbar.scss';
-import { useSearchContext } from '../../context/useSearchContext';
+import { useSearchContext } from '../../hooks/useSearchContext';
 
 function Nav() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -63,7 +62,7 @@ function Nav() {
 	const queryChange = (event) => {
 		const value = event.target.value;
 		setQuery(value);
-		console.log(value);
+		//console.log(value);
 	};
 
 	return (

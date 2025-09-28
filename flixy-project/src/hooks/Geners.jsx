@@ -19,7 +19,9 @@ function useAllGenres(type) {
 			try {
 				const data = await fetch(`https://api.themoviedb.org/3/genre/${type}/list?language=en`, options);
 				const newAllGenres = await data.json();
-				console.log('newAllGenres', newAllGenres);
+
+				//console.log('newAllGenres', newAllGenres);
+
 				setAllGenres(newAllGenres.genres || []);
 			} catch (error) {
 				console.error('error', error);

@@ -36,10 +36,10 @@ function SeriesList() {
 				const data = await fetch(`https://api.themoviedb.org/3/tv/top_rated`, options);
 				const newTopRated = await data.json();
 
-				console.log('newTopRated', newTopRated);
+				//console.log('newTopRated', newTopRated);
 				setTopRated(newTopRated.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}
@@ -65,11 +65,11 @@ function SeriesList() {
 				const data = await fetch(`https://api.themoviedb.org/3/tv/on_the_air`, options);
 				const newOnTheAir = await data.json();
 
-				console.log('newOnTheAir', newOnTheAir);
+				//console.log('newOnTheAir', newOnTheAir);
 
 				setOnTheAir(newOnTheAir.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}
@@ -96,10 +96,10 @@ function SeriesList() {
 				const data = await fetch(`https://api.themoviedb.org/3/tv/airing_today`, options);
 				const newAiringToday = await data.json();
 
-				console.log('newAiringToday', newAiringToday);
+				//console.log('newAiringToday', newAiringToday);
 				setAiringToday(newAiringToday.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useSearchContext } from '../context/useSearchContext';
-import { useAllGenresContext } from '../context/useGenresContext';
+import { useSearchContext } from '../hooks/useSearchContext';
+import { useAllGenresContext } from '../hooks/useGenresContext';
 import { useLocation } from 'react-router';
 
 function CleanSearch() {

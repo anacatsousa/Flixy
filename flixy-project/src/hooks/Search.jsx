@@ -23,9 +23,9 @@ function useSearch(query) {
 				const newSearch = await data.json();
 
 				setSearch(newSearch.results.filter((item) => item.media_type === 'movie' || item.media_type === 'tv'));
-				console.log('newSearch', newSearch.results);
+				//console.log('newSearch', newSearch.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}

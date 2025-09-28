@@ -4,7 +4,7 @@ import Card from '../components/Card/Card';
 import useMyList from '../hooks/MyList';
 import SearchResults from '../components/SearchResults';
 import '../scss/components/_wrapper.scss';
-import { useSearchContext } from '../context/useSearchContext';
+import { useSearchContext } from '../hooks/useSearchContext';
 
 function MyListPage() {
 	const { myList } = useMyList();

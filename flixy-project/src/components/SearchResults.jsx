@@ -3,7 +3,7 @@ import Card from './Card/Card';
 import poster from '../assets/poster.svg';
 import '../scss/components/_wrapper.scss';
 import '../scss/pages/_loading.scss';
-import { useSearchContext } from '../context/useSearchContext';
+import { useSearchContext } from '../hooks/useSearchContext';
 
 function SearchResults() {
 	const { query, search, isLoading } = useSearchContext();

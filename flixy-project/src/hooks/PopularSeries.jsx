@@ -21,11 +21,11 @@ function usePopularSeries() {
 				const data = await fetch(`https://api.themoviedb.org/3/tv/popular`, options);
 				const newPopularSeries = await data.json();
 
-				console.log('newPopularSeries', newPopularSeries);
+				//console.log('newPopularSeries', newPopularSeries);
 
 				setPopularSeries(newPopularSeries.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}

@@ -28,11 +28,11 @@ function useLogos(type) {
 				const data = await fetch(`https://api.themoviedb.org/3/${type}/${id}/images`, options);
 				const newLogos = await data.json();
 
-				console.log('newLogos', newLogos);
+				//console.log('newLogos', newLogos);
 
 				setLogos(newLogos.logos);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}
