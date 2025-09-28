@@ -28,11 +28,11 @@ function useCredits(type) {
 				const data = await fetch(`https://api.themoviedb.org/3/${type}/${id}/credits`, options);
 				const newCredits = await data.json();
 
-				console.log('newCredits', newCredits);
+				//console.log('newCredits', newCredits);
 
 				setCredits(newCredits);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}

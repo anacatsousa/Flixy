@@ -18,35 +18,6 @@ function MoviesList() {
 
 	const { popularMovies, isLoading: moviesLoading } = usePopularMovies();
 
-	// useEffect(() => {
-	// 	const fetchPopularMovies = async () => {
-	// 		const options = {
-	// 			method: 'GET',
-	// 			headers: {
-	// 				accept: 'application/json',
-	// 				Authorization:
-	// 					'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjU4M2ZhNDIwOTlmNTgwOTFhMzg5YmEzYzA1NjIwZiIsIm5iZiI6MTc1NDA4MjI1My41MDEsInN1YiI6IjY4OGQyYmNkMGQwNmQ2ZmMzYTExY2ZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aaG6bNSR5S46iZYs5gJAKG1RahRTnrOy22d3mH6y9OU', // Replace with your Bearer token
-	// 			},
-	// 		};
-
-	// 		setIsLoading(true);
-
-	// 		try {
-	// 			const data = await fetch(`https://api.themoviedb.org/3/movie/popular`, options);
-	// 			const newPopularMovies = await data.json();
-
-	// 			console.log('newPopularMovies', newPopularMovies);
-
-	// 			setPopularMovies(newPopularMovies.results);
-	// 		} catch (error) {
-	// 			console.log('error', error);
-	// 		} finally {
-	// 			setIsLoading(false);
-	// 		}
-	// 	};
-	// 	fetchPopularMovies();
-	// }, []);
-
 	// Now Playing
 
 	useEffect(() => {
@@ -65,11 +36,11 @@ function MoviesList() {
 				const data = await fetch(`https://api.themoviedb.org/3/movie/now_playing`, options);
 				const newNowPlaying = await data.json();
 
-				console.log('newNowPlaying', newNowPlaying);
+				//console.log('newNowPlaying', newNowPlaying);
 
 				setNowPlaying(newNowPlaying.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}
@@ -96,10 +67,10 @@ function MoviesList() {
 				const data = await fetch(`https://api.themoviedb.org/3/movie/top_rated`, options);
 				const newTopRated = await data.json();
 
-				console.log('newTopRated', newTopRated);
+				//console.log('newTopRated', newTopRated);
 				setTopRated(newTopRated.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}
@@ -126,10 +97,10 @@ function MoviesList() {
 				const data = await fetch(`https://api.themoviedb.org/3/movie/upcoming`, options);
 				const newAiringToday = await data.json();
 
-				console.log('newAiringToday', newAiringToday);
+				//console.log('newAiringToday', newAiringToday);
 				setUpcoming(newAiringToday.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}

@@ -23,7 +23,7 @@ function useGenres(type, number = []) {
 			try {
 				const data = await fetch(`https://api.themoviedb.org/3/discover/${type}?with_genres=${genreIds}&sort_by=popularity.desc`, options);
 				const newGenres = await data.json();
-				console.log('newGenres', newGenres.results);
+				//console.log('newGenres', newGenres.results);
 
 				setGenres(newGenres.results);
 			} catch (error) {

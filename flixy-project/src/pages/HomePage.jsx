@@ -1,7 +1,7 @@
 import Container from '../components/Container/Container';
 import HomeList from '../components/HomeList';
 import SearchResults from '../components/SearchResults';
-import { useSearchContext } from '../context/useSearchContext';
+import { useSearchContext } from '../hooks/useSearchContext';
 
 function Home() {
 	const { query } = useSearchContext();

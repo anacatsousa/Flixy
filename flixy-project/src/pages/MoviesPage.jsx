@@ -3,8 +3,8 @@ import MoviesList from '../components/MoviesList';
 import SearchResults from '../components/SearchResults';
 
 import GenresResults from '../components/GenresResults';
-import { useAllGenresContext } from '../context/useGenresContext';
-import { useSearchContext } from '../context/useSearchContext';
+import { useAllGenresContext } from '../hooks/useGenresContext';
+import { useSearchContext } from '../hooks/useSearchContext';
 
 function Movies() {
 	const { query } = useSearchContext();

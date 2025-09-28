@@ -21,11 +21,11 @@ function usePopularMovies() {
 				const data = await fetch(`https://api.themoviedb.org/3/movie/popular`, options);
 				const newPopularMovies = await data.json();
 
-				console.log('newPopularMovies', newPopularMovies);
+				//console.log('newPopularMovies', newPopularMovies);
 
 				setPopularMovies(newPopularMovies.results);
 			} catch (error) {
-				console.log('error', error);
+				console.error('error', error);
 			} finally {
 				setIsLoading(false);
 			}

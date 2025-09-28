@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AllGenresContext } from './GenreContext';
+import { AllGenresContext } from '../context/GenreContext';
 
 function useAllGenresContext() {
 	const context = useContext(AllGenresContext);
