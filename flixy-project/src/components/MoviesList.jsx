@@ -26,8 +26,7 @@ function MoviesList() {
 				method: 'GET',
 				headers: {
 					accept: 'application/json',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjU4M2ZhNDIwOTlmNTgwOTFhMzg5YmEzYzA1NjIwZiIsIm5iZiI6MTc1NDA4MjI1My41MDEsInN1YiI6IjY4OGQyYmNkMGQwNmQ2ZmMzYTExY2ZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aaG6bNSR5S46iZYs5gJAKG1RahRTnrOy22d3mH6y9OU', // Replace with your Bearer token
+					Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
 				},
 			};
 
@@ -56,8 +55,7 @@ function MoviesList() {
 				method: 'GET',
 				headers: {
 					accept: 'application/json',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjU4M2ZhNDIwOTlmNTgwOTFhMzg5YmEzYzA1NjIwZiIsIm5iZiI6MTc1NDA4MjI1My41MDEsInN1YiI6IjY4OGQyYmNkMGQwNmQ2ZmMzYTExY2ZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aaG6bNSR5S46iZYs5gJAKG1RahRTnrOy22d3mH6y9OU', // Replace with your Bearer token
+					Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
 				},
 			};
 
@@ -86,8 +84,7 @@ function MoviesList() {
 				method: 'GET',
 				headers: {
 					accept: 'application/json',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjU4M2ZhNDIwOTlmNTgwOTFhMzg5YmEzYzA1NjIwZiIsIm5iZiI6MTc1NDA4MjI1My41MDEsInN1YiI6IjY4OGQyYmNkMGQwNmQ2ZmMzYTExY2ZjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aaG6bNSR5S46iZYs5gJAKG1RahRTnrOy22d3mH6y9OU', // Replace with your Bearer token
+					Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
 				},
 			};
 
