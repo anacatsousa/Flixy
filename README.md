@@ -23,11 +23,13 @@ Flixy is a fictional streaming platform built to simulate a real-world movie and
 - Real movie and TV show data fetched from the TMDB API
 - Browse and filter content by category with React Select
 - Client-side navigation with React Router
+- Global state management with React Context
+- Custom hooks for reusable data fetching logic
 - Fully responsive layout (mobile, tablet, desktop)
 - Modular SCSS styling with BEM methodology
+- Built with accessibility in mind (keyboard navigation, ARIA attributes, and screen reader support)
 
 <br>
-
 
 ## Project Structure
 
@@ -50,14 +52,68 @@ Flixy/
 
 <br>
 
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v20 or higher recommended)
+- npm or yarn
+- A [TMDB API](https://developer.themoviedb.org/docs) account to get a Bearer token
+
+### Run Locally
+
+1. **Clone the repository**
+
+    ```bash
+    git clone https://github.com/anacatsousa/Flixy.git
+    ```
+
+2. **Navigate into the project folder**
+
+    ```bash
+    cd Flixy/flixy-project
+    ```
+
+3. **Install dependencies**
+
+    ```bash
+    npm install
+    ```
+
+4. **Set up environment variables**
+
+    Create a `.env` file in the `flixy-project/` root:
+
+    ```bash
+    touch .env
+    ```
+
+    Add your TMDB Bearer token:
+
+    ```
+    VITE_TMDB_TOKEN=your_bearer_token_here
+    ```
+
+    You can find your token at [themoviedb.org](https://www.themoviedb.org/) → Settings → API → API Read Access Token.
+
+5. **Start the development server**
+
+    ```bash
+    npm run dev
+    ```
+
+6. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+<br>
+
 ## Dependencies
 
-| Package | Version | Purpose |
-|---|---|---|
-| react + react-dom | ^19.1.0 | UI library |
-| react-router | ^7.7.1 | Client-side routing |
-| react-select | ^5.10.2 | Customizable select/filter component |
-| sass | ^1.90.0 | SCSS compilation |
+| Package           | Version | Purpose                              |
+| ----------------- | ------- | ------------------------------------ |
+| react + react-dom | ^19.1.0 | UI library                           |
+| react-router      | ^7.7.1  | Client-side routing                  |
+| react-select      | ^5.10.2 | Customizable select/filter component |
+| sass              | ^1.90.0 | SCSS compilation                     |
 
 <br>
 

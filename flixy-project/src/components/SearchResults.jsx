@@ -14,7 +14,7 @@ function SearchResults() {
 		<>
 			{query && (
 				<div className="wrapper">
-					<h2 className="wrapper__title">Search</h2>
+					<h1 className="wrapper__title">Search</h1>
 					<div className="wrapper__posters--grid">
 						{query && search.length === 0 && <p>No results</p>}
 						{search.map((list) => (

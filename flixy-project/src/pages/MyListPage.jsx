@@ -21,7 +21,7 @@ function MyListPage() {
 			) : (
 				<Container>
 					<div className="wrapper">
-						<h2 className="wrapper__title">My List</h2>
+						<h1 className="wrapper__title">My List</h1>
 						<div className="wrapper__posters--grid">
 							{myList.length === 0 ? (
 								<p> Your list is empy</p>

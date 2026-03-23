@@ -19,6 +19,8 @@ function HomeList() {
 				''
 			) : (
 				<div className="wrapper">
+					<h1 className="sr-only">Watch movies and TV Shows </h1>
+
 					<h2 className="wrapper__title">My List</h2>
 					<div className="wrapper__posters">
 						{myList.map((list) => (
@@ -37,6 +39,8 @@ function HomeList() {
 			)}
 
 			<div className="wrapper">
+				<h1 className="sr-only">Watch movies and TV Shows </h1>
+
 				<h2 className="wrapper__title">Popular Movies</h2>
 				<div className="wrapper__posters">
 					{popularMovies.map((popularMovie) => (

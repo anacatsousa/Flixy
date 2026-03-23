@@ -3,7 +3,7 @@ import useAllGenres from '../../hooks/Geners';
 import './_selectGenres.scss';
 import { useAllGenresContext } from '../../hooks/useGenresContext';
 
-function SelectGenres({ type }) {
+function SelectGenres({ type, ...props }) {
 	const { allGenres, isLoading } = useAllGenres(type);
 	const { selectedGenres, setSelectedGenres } = useAllGenresContext();
 
@@ -17,6 +17,6 @@ function SelectGenres({ type }) {
 		//console.log('selectedOptions', selectedOptions);
 	};
 
-	return <Select isMulti options={genreOptions} value={selectedGenres} onChange={handleChange} isLoading={isLoading} placeholder="Genres" className="select" classNamePrefix="select" />;
+	return <Select {...props} isMulti options={genreOptions} value={selectedGenres} onChange={handleChange} isLoading={isLoading} placeholder="Genres" className="select" classNamePrefix="select" />;
 }
 export default SelectGenres;

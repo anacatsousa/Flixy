@@ -5,8 +5,8 @@
 		background-color: $black;
 		border-radius: 0px;
 		border: 1px solid $white;
-		outline: none;
-		box-shadow: none;
+		//outline: none;
+		//box-shadow: none;
 		font-size: 14px;
 		cursor: pointer;
 		&:hover {
@@ -48,6 +48,7 @@
 						fill: $red;
 						width: 20px;
 						height: 20px;
+						pointer-events: none;
 						&:hover {
 							fill: $white;
 						}
@@ -111,8 +112,8 @@
 			}
 
 			&--is-focused {
-				background-color: $white;
-				color: $black;
+				background-color: $red;
+				color: $white;
 			}
 		}
 	}

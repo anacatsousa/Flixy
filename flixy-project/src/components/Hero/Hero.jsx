@@ -11,10 +11,11 @@ function Hero({ details, logo }) {
 
 	return (
 		<div className="hero">
+			<h1 className="sr-only">{details.title || details.name}</h1>
 			{logo === undefined ? (
-				<h2 className="hero__title">{details.title || details.name}</h2>
+				<h1 className="hero__title">{details.title || details.name}</h1>
 			) : (
-				<img src={`https://image.tmdb.org/t/p/original${logo.file_path}`} alt={details.title} className="hero__logo" />
+				<img src={`https://image.tmdb.org/t/p/original${logo.file_path}`} alt={details.title || details.name} className="hero__logo" />
 			)}
 			<div className="hero__section">
 				<span>{details.runtime ? `${hours} h ${min} min ` : details.number_of_seasons ? `${details.number_of_seasons} seasons` : ''}</span>
@@ -24,7 +25,14 @@ function Hero({ details, logo }) {
 				</div>
 				<span>{new Date(details.release_date || details.first_air_date).getFullYear()}</span>
 			</div>
-			<div className="hero_genres">{details.genres.map((genre) => genre.name).join(' | ')}</div>
+			<div className="hero_genres">
+				{details.genres.map((genre, index) => (
+					<span key={genre.id}>
+						{genre.name}
+						{index < details.genres.length - 1 && <span aria-hidden="true"> | </span>}
+					</span>
+				))}
+			</div>{' '}
 			<div className="hero__action">
 				<Button text="Watch Now" />
 				<Button text="My List" myList={true} item={details} type={type} variant="my-list" />

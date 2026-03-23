@@ -42,6 +42,9 @@
 		@extend %input;
 		border: 1px solid $ligth-gray;
 		padding: 10px;
+		&:focus {
+			border: 1px solid $red;
+		}
 	}
 	&__input::placeholder,
 	&__textarea::placeholder {

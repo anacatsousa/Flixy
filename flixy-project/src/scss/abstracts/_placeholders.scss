@@ -51,8 +51,9 @@
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	box-shadow: none;
-	&:focus-visible {
+	&:focus {
 		outline: none;
+		border-bottom: 1px solid $red;
 	}
 
 	@include tablet {
