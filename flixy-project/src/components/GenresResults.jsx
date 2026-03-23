@@ -46,7 +46,10 @@ function GenresResults({ type }) {
 		<div className="wrapper">
 			<div className="wrapper__inicial">
 				<h2 className="wrapper__title">{type === 'tv' ? 'Tv Shows' : 'Movies'}</h2>
-				<SelectGenres type={type} />
+				<label htmlFor="genres-select" className="sr-only">
+					Filter by genre
+				</label>
+				<SelectGenres type={type} tabSelectsValue={false} aria-label="Select genres" inputId="genres-select" closeMenuOnSelect={false} />
 			</div>
 			<div className="wrapper__posters--grid">
 				{search.length === 0 && <p>No results</p>}

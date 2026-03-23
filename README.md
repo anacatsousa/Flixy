@@ -27,9 +27,9 @@ Flixy is a fictional streaming platform built to simulate a real-world movie and
 - Custom hooks for reusable data fetching logic
 - Fully responsive layout (mobile, tablet, desktop)
 - Modular SCSS styling with BEM methodology
+- Built with accessibility in mind (keyboard navigation, ARIA attributes, and screen reader support)
 
 <br>
-
 
 ## Project Structure
 
@@ -109,12 +109,12 @@ Flixy/
 
 ## Dependencies
 
-| Package | Version | Purpose |
-|---|---|---|
-| react + react-dom | ^19.1.0 | UI library |
-| react-router | ^7.7.1 | Client-side routing |
-| react-select | ^5.10.2 | Customizable select/filter component |
-| sass | ^1.90.0 | SCSS compilation |
+| Package           | Version | Purpose                              |
+| ----------------- | ------- | ------------------------------------ |
+| react + react-dom | ^19.1.0 | UI library                           |
+| react-router      | ^7.7.1  | Client-side routing                  |
+| react-select      | ^5.10.2 | Customizable select/filter component |
+| sass              | ^1.90.0 | SCSS compilation                     |
 
 <br>
 

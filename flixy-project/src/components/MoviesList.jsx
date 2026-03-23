@@ -110,6 +110,7 @@ function MoviesList() {
 	return (
 		<>
 			<div className="wrapper">
+				<h1 className="sr-only">Watch movies and TV Shows </h1>
 				<div className="wrapper__inicial">
 					<h2 className="wrapper__title">Popular Movies</h2>
 					<SelectGenres type="movie" />

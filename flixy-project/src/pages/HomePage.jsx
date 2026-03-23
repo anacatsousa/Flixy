@@ -2,6 +2,7 @@ import Container from '../components/Container/Container';
 import HomeList from '../components/HomeList';
 import SearchResults from '../components/SearchResults';
 import { useSearchContext } from '../hooks/useSearchContext';
+import '../scss/pages/_dinamicPages.scss';
 
 function Home() {
 	const { query } = useSearchContext();

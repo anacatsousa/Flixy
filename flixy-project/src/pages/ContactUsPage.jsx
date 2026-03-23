@@ -94,7 +94,7 @@ function ContactUs() {
 	return (
 		<Container>
 			<div className="static-page">
-				<h2 className="static-page__title">Contact Us</h2>
+				<h1 className="static-page__title">Contact Us</h1>
 				{/* <form action="" method="post" onSubmit={handleSubmit} className="static-page__form"> */}
 				<form onSubmit={handleSubmit} className="static-page__form" noValidate>
 					<div className="static-page__form-group">

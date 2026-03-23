@@ -110,6 +110,7 @@ function SeriesList() {
 	return (
 		<>
 			<div className="wrapper">
+				<h1 className="sr-only">Watch Tv Shows </h1>
 				<div className="wrapper__inicial">
 					<h2 className="wrapper__title">Popular Series</h2>
 					<SelectGenres type="tv" />

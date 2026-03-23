@@ -16,10 +16,10 @@ function Tabs({ credits, type, genresId, id }) {
 		<>
 			<div className="tabs">
 				<div className="tabs__header">
-					<button onClick={() => setIsActive('similar')} className={`tabs__title ${isActive === 'similar' ? 'tabs__title--active' : ''}`}>
+					<button onClick={() => setIsActive('similar')} className={`tabs__title ${isActive === 'similar' ? 'tabs__title--active' : ''}`} aria-label="More movies/series like this">
 						More Like This
 					</button>
-					<button onClick={() => setIsActive('details')} className={`tabs__title ${isActive === 'details' ? 'tabs__title--active' : ''}`}>
+					<button onClick={() => setIsActive('details')} className={`tabs__title ${isActive === 'details' ? 'tabs__title--active' : ''}`} aria-label="Details about this movies/series">
 						Details
 					</button>
 				</div>
@@ -50,7 +50,7 @@ function Tabs({ credits, type, genresId, id }) {
 					{isActive === 'details' && (
 						<div className="tabs__details">
 							<div className="tabs__details-cast">
-								<h3 className="tabs__details-title">Cast</h3>
+								<h2 className="tabs__details-title">Cast</h2>
 								<div className="tabs__cast">
 									{credits.cast.map((person) => {
 										return (
@@ -74,7 +74,7 @@ function Tabs({ credits, type, genresId, id }) {
 							<div className="tabs__details-crew">
 								{credits.crew.length > 0 && (
 									<>
-										<h3 className="tabs__details-title">Crew</h3>
+										<h2 className="tabs__details-title">Crew</h2>
 										<div className="tabs__crew">
 											{credits.crew.map((person) => {
 												return (

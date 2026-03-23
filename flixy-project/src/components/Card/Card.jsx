@@ -6,11 +6,13 @@ function Card({ img, title, year, stars, layout }) {
 		<div className={`card card--${layout}`}>
 			<img src={img} alt={title} className="card__img" />
 			<div className="card__wrapper">
-				<span className="card__title">{title}</span>
+				<span className="card__title" aria-hidden="true">
+					{title}
+				</span>
 				<div className="card__section">
 					<img src={star} alt="Star icon" className="card__star" />
 					<span className="card__stars">{typeof stars === 'number' ? stars.toFixed(1) : ''}</span>
-					<span> | </span>
+					<span aria-hidden="true"> | </span>
 					<span className="card__year">{year instanceof Date && !isNaN(year) ? year.getFullYear() : 'unknown'}</span>
 				</div>
 			</div>

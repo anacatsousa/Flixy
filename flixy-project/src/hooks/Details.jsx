@@ -29,7 +29,7 @@ function useDetails(type) {
 				const data = await fetch(`https://api.themoviedb.org/3/${type}/${id}`, options);
 				const newDetails = await data.json();
 
-				//console.log('newDetails', newDetails);
+				console.log('newDetails', newDetails);
 
 				setDetails(newDetails);
 			} catch (error) {

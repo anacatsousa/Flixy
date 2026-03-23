@@ -4,7 +4,7 @@ import '../Submitted/_success.scss';
 function Success() {
 	return (
 		<div className="success">
-			<h2>Form submitted!</h2>
+			<h1>Form submitted!</h1>
 			<Link to={'/'}>&rarr; Go back Home</Link>
 		</div>
 	);

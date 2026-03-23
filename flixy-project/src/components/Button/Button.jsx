@@ -34,8 +34,8 @@ function Button({ text, item, type, variant, myList = false }) {
 
 	return (
 		<button className={`btn btn--${variant}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={click}>
-			{inList ? <img src={check} alt="Added to my list" /> : <img src={plus} alt="Add to my list" />}
-			{text}
+			{inList ? <img src={check} alt="Remove from my list" /> : <img src={plus} alt="Save to my list" />}
+			<span aria-hidden="true">{text}</span>
 		</button>
 	);
 }
