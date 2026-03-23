@@ -106,6 +106,7 @@ Flixy/
 
 <br>
 
+
 ## Dependencies
 
 | Package           | Version | Purpose                              |
